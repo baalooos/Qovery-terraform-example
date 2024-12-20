@@ -3,6 +3,21 @@ variable "region" {
   default     = "eu-west-3" # Change the default as needed
 }
 
+variable "vpc_id" {
+  description = "VPC Ids to create Security Groups"
+  default = "vpc-xxx"
+}
+
+variable "vpc_cidr_block" {
+  description = "CIDR for the SG"
+
+}
+
+variable "subnet_ids" {
+  description = "Subnet Ids to create the Subnet Group"
+  default     = ["subnet-xxx", "subnet-xxx", "subnet-xxx"]
+}
+
 variable "db_name" {
   description = "Name of the RDS instance"
   default     = "mydb"
@@ -42,9 +57,4 @@ variable "db_password" {
 variable "db_enable_bg" {
   description = "Enable Blue Green for this instance"
   default     = true
-}
-
-variable "subnet_ids" {
-  description = "Subnet Ids to create the Subnet Group"
-  default     = ["subnet-00264e0b187ed44d0", "subnet-0147bc0620b7b4f7e", "subnet-02a4ebab3144711e1"]
 }
